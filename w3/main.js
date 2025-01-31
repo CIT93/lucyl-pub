@@ -1,4 +1,4 @@
-function determineHouseHoldPts() {
+function determineHouseHoldPts(numberInHousehold) {
   console.log("Inside the fuction");
   if (numberInHousehold === 1) {
     carbonFootPrintPoints = carbonFootPrintPoints + 14;
@@ -27,3 +27,23 @@ let carbonFootPrintPoints = 0;
 
 determineHouseHoldPts(3);
 determineHouseHoldPts(4);
+
+function cfpHomeSize(homeSize) {
+  if (homeSize === "Small") {
+      homeSizePts = homeSizePts + 10;
+  } else if(homeSize === "Medium") {
+      homeSizePts = homeSizePts + 7;
+  } else if(homeSize === "large") {
+      homeSizePts = homeSizePts + 4;
+  } else if(homeSize === "Apartment") {
+      homeSizePts = homeSizePts + 2;
+  }
+  console.log(`If your home is ${homeSize} sized, then your carbon footprint total is: ${homeSizePts}`)
+}
+
+const homeSize = "";
+let homeSizePts = 0;
+
+cfpHomeSize("Small")
+cfpHomeSize("Medium")
+cfpHomeSize("large")
