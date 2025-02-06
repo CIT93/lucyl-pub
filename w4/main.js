@@ -11,9 +11,7 @@ function determineHouseSizePts(size) {
   } else if (size === "apt") {
     HouseSizePoints = 2;
   }
-  console.log(
-    `Based on the size ${size} the points would be ${HouseSizePoints}.`
-  );
+ // console.log(`Based on the size ${size} the points would be ${HouseSizePoints}.`);
   return HouseSizePoints;
 }
 
@@ -48,18 +46,24 @@ function start(houseHoldMembers, houseSize) {
 }
 
 function displayOutput() {
-
+   for (arr of cfpData){
+    console.log(arr)
+    const out = document.getElementById("output");
+    const newP = document.createElement("p")
+    newP.textContent = `House members ${arr[2]}, Size of house = ${arr[1]}. The Carbon Footprint total is ${arr[4]}`;
+    output.appendChild(newP)
+   } 
 }
 
 start(5, "apt");
 start(4, "large");
 start(3, "medium");
 start(2, "small");
-start(1);
-start(2);
-start(3);
-start(4);
-start(5);
-start(6);
+start(1, "small");
+start(2, "medium");
+start(3, "large");
+start(4, "apt");
+start(5, "large");
+start(6, "medium");
 
 displayOutput();
