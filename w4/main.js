@@ -50,7 +50,7 @@ function displayOutput() {
     console.log(arr)
     const out = document.getElementById("output");
     const newP = document.createElement("p")
-    newP.textContent = `House members ${arr[2]}, score for house members is ${arr[3]}, Size of house = ${arr[1]}. The Carbon Footprint total is ${arr[4]}`;
+    newP.textContent = `House members ${arr[0]}, score for house members is ${arr[2]}, Size of house = ${arr[1]}, Score for size of house is ${arr[3]}. The Carbon Footprint total is ${arr[4]}`;
     output.appendChild(newP)
    } 
 }
