@@ -59,16 +59,16 @@ function displayOutput() {
   for (obj of cfpData) {
     console.log(obj)
     const output = document.getElementById("output");
-    // const newP = document.createElement("p");
+    const newP = document.createElement("p");
     const newH2 = document.createElement("h2");
     newH2.textContent = `Carbon Footprint total is ${obj.cfptotal}`;
-    // const newH3 = document.createElement("h3");
-    // newH3.textContent = 'Based on number in Household and Size of Home'
-    // newP.textContent = `This number is based on the number of ${arr[0]} (score: ${arr[3]})`;
-    // newP.textContent += ` and a ${arr[1]} size of home (score ${arr[2]})`
+    const newH3 = document.createElement("h3");
+    newH3.textContent = 'Based on number in Household and Size of Home'
+    newP.textContent = `This number is based on the number of ${obj.houseM} (score: ${obj.houseMPTS})`;
+    newP.textContent += ` and a ${obj.houseS} size of home (score ${obj.houseSPTS})`
     output.appendChild(newH2);
-    // output.appendChild(newH3);
-    // output.appendChild(newP);
+    output.appendChild(newH3);
+    output.appendChild(newP);
   }
 }
 
@@ -77,4 +77,4 @@ start(2, "apt");
 start(3, "apt");
 start(4, "apt");
 
-displayOutput(cfpData)
+displayOutput()
