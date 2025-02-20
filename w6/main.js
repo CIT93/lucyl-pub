@@ -55,8 +55,12 @@ function start(houseHoldMembers, houseSize) {
 }); 
 }
 
-function displayOutput() {
-    
+function displayOutput(firstName, lastName) {
+  OUTPUT.innerHTML = "";
+  const nameHeading = document.createElement("h1");
+  nameHeading.textContent = `First Name is ${firstName}, Last Name is ${lastName}`;
+  OUTPUT.appendChild(nameHeading);
+
     for (obj of cfpData) {
     const newH2 = document.createElement("h2");
     newH2.textContent = `Carbon Footprint total is ${obj.cfptotal}`;
@@ -71,15 +75,14 @@ function displayOutput() {
   }
 }
 
-FORM.addEventListener('submit', function (e){
+FORM.addEventListener("submit", function (e){
   e.preventDefault();
   const firstName = FORM.firstname.value;
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housem.value);
   const houseSize = FORM.houses.value;
   start(houseMembers, houseSize);
-  OUTPUT.innerHTML = "";
-  displayOutput()
+  displayOutput(firstName, lastName);
   FORM.reset();
-})
+});
 
