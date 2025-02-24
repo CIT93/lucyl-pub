@@ -94,9 +94,9 @@ const movieArr = [
 const output = document.getElementById("output");
 if (output) {
   movieArr.forEach(function (obj) {
-    if (obj.rating >= 6 && obj.watched <= 5) {
+    if (obj.rating >= 6 || obj.watched <= 5) {
       const newH2 = document.createElement("h2");
-      newH2.textContent = `${obj.title} (${obj.year}) with a rating of ${obj.rating}`;
+      newH2.textContent = `${obj.title} (${obj.year}) with a rating of ${obj.Rating} watched ${obj.watched} times`;
       output.appendChild(newH2);
     }
   });
