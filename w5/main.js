@@ -1,3 +1,6 @@
+import { renderMovies } from "./render.js";
+
+
 // const cfpData = [];
 // function determineHouseSizePts(size) {
 //   let houseSizePoints = 0;
@@ -84,22 +87,34 @@
 
 
 const movieArr = [
-  {title: "Lord of the Rings; The Fellowship of the Ring", year: "2001", Rating: "10/10", watched: "43"},
-  {title: "Willow", year: "1988", Rating: "7/10", watched: "2"},
-  {title: "Intestellar", year: "2014", Rating: "9/10", watched: "3"},
-  {title: "Luca", year: "2021", Rating: "8/10", watched: "11"},
-  {title: "Shawshank Redemption", year: "1994", Rating: "9/10", watched: "4"}
+  {title: "Lord of the Rings; The Fellowship of the Ring", year: 2001, Rating: 10/10, watched: 43},
+  {title: "Willow", year: "1988", Rating: 7, watched: 2},
+  {title: "Intestellar", year: 2014, Rating: 9, watched: 3},
+  {title: "Luca", year: 2021, Rating: 8, watched: 11},
+  {title: "Shawshank Redemption", year: 1994, Rating: 9, watched: 4}
 ]
 
-const output = document.getElementById("output");
-if (output) {
-  movieArr.forEach(function (obj) {
-    if (obj.rating >= 6 || obj.watched <= 5) {
-      const newH2 = document.createElement("h2");
-      newH2.textContent = `${obj.title} (${obj.year}) with a rating of ${obj.Rating} watched ${obj.watched} times`;
-      output.appendChild(newH2);
-    }
-  });
-} 
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderMovies(movieArr);
+});
+
+function createHeading() {
+  const heading = document.createElement('h1');
+  heading.textContent = 'What should I watch';
+  const output = document.getElementById('output');
+  output.appendChild(heading);
+}
+
+// const output = document.getElementById("output");
+// if (output) {
+//   movieArr.forEach(function (obj) {
+//     if (obj.rating >= 6 || obj.watched <= 5) {
+//       const newH2 = document.createElement("h2");
+//       newH2.textContent = `${obj.title} (${obj.year}) with a rating of ${obj.Rating} watched ${obj.watched} times`;
+//       output.appendChild(newH2);
+//     }
+//   });
+// } 
 
 

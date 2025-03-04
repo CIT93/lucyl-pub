@@ -21,7 +21,7 @@ function renderTbl(data){
     const tbody = document.createElement("tbody");
     const tr = document.createElement("tr");
     // const trTextArr = ["Lucy", "Large", 20];
-    const trTextArr = ["Lucy", 20];
+    const trTextArr = [obj.name, obj.footprint];
     trTextArr.forEach(function(text){
       const td = document.createElement("td");
       td.textContent = text;
