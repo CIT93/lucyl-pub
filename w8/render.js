@@ -64,6 +64,11 @@ function renderTblBody(data) {
 }
 
 function renderTbl(data) {
+   TBL.innerHTML = ""; 
+
+  if (data.length === 0) {
+    return; // Stop execution if there is no data, preventing the table from rendering
+  }
   const table = renderTblHeading();
   const tbody = renderTblBody(data);
   // const tbody = document.createElement("tbody");
