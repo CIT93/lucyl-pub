@@ -1,7 +1,8 @@
 const TBL = document.getElementById("tab-data");
+const FORM = document.getElementById("form")
 
 function renderTblHeading() {
-  TBL.innerHTML = "";
+  // TBL.innerHTML = "";
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
@@ -23,7 +24,7 @@ function renderTblHeading() {
   return table;
 }
 
-function renderTblBtn(index, data) {
+function renderTblBtn(obj, index, data) {
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
   const btnDel = document.createElement("button");
@@ -32,13 +33,18 @@ function renderTblBtn(index, data) {
   td.appendChild(btnEdit);
   td.appendChild(btnDel);
   btnDel.addEventListener("click", function (e) {
-    console.log("Hello from inside the delte button");
-    console.log(e);
+    // console.log("Hello from inside the delte button");
+    // console.log(e);
     data.splice(index, 1);
     renderTbl(data)
   });
   btnEdit.addEventListener('click', function(e){
-    
+    FORM[1].value = obj.firstName;
+    FORM[2].value = obj.lastName;
+    FORM[3].value = obj.houseM;
+    FORM[4].value = obj.houseS;
+    data.splice(index, 1);
+    renderTbl(data)
   })
   return td;
 }
@@ -56,7 +62,7 @@ function renderTblBody(data) {
         tr.appendChild(td);
       }
     }
-    const td = renderTblBtn(index, data);
+    const td = renderTblBtn(obj, index, data);
     tr.appendChild(td);
     tbody.appendChild(tr);
   });
@@ -65,15 +71,14 @@ function renderTblBody(data) {
 
 function renderTbl(data) {
    TBL.innerHTML = ""; 
-
-  if (data.length === 0) {
-    return; // Stop execution if there is no data, preventing the table from rendering
+   if (data.length !== 0) {
+    const table = renderTblHeading();
+    const tbody = renderTblBody(data);
+    // const tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+    TBL.appendChild(table);
   }
-  const table = renderTblHeading();
-  const tbody = renderTblBody(data);
-  // const tbody = document.createElement("tbody");
-  table.appendChild(tbody);
-  TBL.appendChild(table);
+
   // const thead = document.createElement("thead");
   // const tr = document.createElement("tr");
   // const tbody = document.createElement("tbody");
