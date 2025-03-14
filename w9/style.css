@@ -18,3 +18,11 @@ html {
   tbody tr:nth-child(odd) {
     background-color: #264 ;
   }
+
+  /*Style for error message and invalid fields*/
+  .error {
+    color: red;
+  }
+  .invalid {
+    border-color: red;
+  }
