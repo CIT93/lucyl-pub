@@ -4,10 +4,10 @@ import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 import { FP } from "./fp.js";
 
-const start = (first, last, houseHoldMembers, houseSize, foodChoice) => {
+const start = (first, last, houseHoldMembers, houseSize) => {
   const houseHoldPts = determineHouseHoldPts(houseHoldMembers);
   const houseSizePts = determineHouseSizePts(houseSize);
-  const total = houseHoldPTS + houseSizePts + foodPts;
+  const total = houseHoldPts + houseSizePts;
   cfpData.push({
     firstName: first,
     lastName: last,
@@ -15,7 +15,6 @@ const start = (first, last, houseHoldMembers, houseSize, foodChoice) => {
     houseS: houseSize,
     houseMPTS: houseHoldPts,
     houseSPTS: houseSizePts,
-    foodPts: foodChoice,
     cfpTotal: total,
   });
 };
@@ -74,7 +73,8 @@ FORM.addEventListener("submit", e => {
       FNAME.value,
       LNAME.value,
       parseInt(FORM.housem.value),
-      FORM.houses.value
+      FORM.houses.value,
+      FORM.foodChoice.value
     );
     // fbObj.HouseHoldPoints();
     // fbObj.HouseSizePoints();
