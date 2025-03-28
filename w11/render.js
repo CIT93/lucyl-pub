@@ -11,7 +11,7 @@ const renderTblHeading = () =>  {
     "Name",
     "Household",
     "HouseSize",
-    "Food",
+    "Food Choice",
     "Total",
     "Action",
   ];
