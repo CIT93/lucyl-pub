@@ -1,35 +1,41 @@
 const FORM = document.getElementById("form");
-const output = document.getElementById("output");
+const OUT = document.getElementById("output");
 
-function updateDOM(message, el) {
+const updateDOM = (message, el = "h3") => {
   const newEL = document.createElement(el);
   newEL.textContent = message;
-  output.appendChild(newEL);
+  OUT.appendChild(newEL);
 }
+
 function clearOutput() {
   output.innerHTML = "";
 }
 
-const startWorkout = (type, reps, time) => {
+const startWorkout = (type, reps, time,fn) => {
+  fn(`Start ${type} <> Goal reps is ${reps} <> complete in ${time} min!`, "p");
   return new Promise((resolve, reject) => {
-    if (!type) {
-      reject("Type of exercise is required.");
-    } else if (reps <= 0 || time <= 0) {
-      reject("Reps and time must be greater than 0.");
-    }
-    updateDOM(`Start ${type} <> Goal reps is ${reps} <> complete in ${time} min!`, "p");
+    if (time ===0) {
+      reject(`Error in Time selection`);
+    } else {
     setTimeout(() => {
       resolve(`Stop ${type}`);
     }, time * 1000);
+  }
   });
 };
+
+const onError = (error) => {
+  updateDOM(error, "h2")
+}
 
 FORM.addEventListener("submit", e => {
   e.preventDefault();
   const type = e.target.type.value;
   const reps = parseFloat(e.target.reps.value);
   const time = parseFloat(e.target.time.value);
-  startWorkout(type, reps, time, updateDOM);
+  startWorkout(type, reps, time, updateDOM)
+  .then(updateDOM)
+  .catch(onError)
   FORM.reset();
 });
 
