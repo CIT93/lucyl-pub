@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout App</title>
+      <script defer src="main.js"></script>
+  </head>
+
+  <body>
+    <style>
+        html {
+            font-size: 32;
+        }
+        body {
+            background-color: darkolivegreen;
+        }
+    </style>
+  </body>
+ 
+  <body>
+    <main>
+    <form id="form">
+      <fieldset>
+        <legend>Time to get FIT!</legend>
+        <p class="block">
+          <label>Type of Excercise</label>
+          <input name="type" type="text" required>
+        </p>
+
+        <p class="block">
+          <label>Target Number if Reps</label>
+          <input name="reps" type="number" required>
+        </p>
+        <p class = "block">
+          <label>Time in Minutes</label>
+          <input name="time" type="number" step="any" required>
+        </p>
+        <p class="block">
+          <label>Get Ready</label>
+          <button>Submit</button>
+        </p>
+        <!-- <div>
+          <label for="exercise">Type of exercise</label>
+          <select id="exercise" name="exercise" required>
+            <option value="select">--- Select type of exercise ---</option>
+            <option value="curls">Curls</option>
+            <option value="pushUps">Push-ups</option>
+            <option value="runInPlace">Run in place</option>
+            <option value="romanianDeadLift">Romanian deadlifts</option>
+            <option value="jumpingJacks">Jumping jacks</option>
+          </select>
+        </div>
+        
+        <p class="block">
+          <label for="reps">Rep Target</label>
+          <input type="number" id="reps" name="reps" min="1" required>
+        </p>
+
+        <div>
+          <label for="time">Time in seconds</label>
+          <input type="number" id="time" name="time" min="30" required>
+        </div>
+
+        <div>
+          <button type="submit">Submit</button>
+        </div> -->
+
+      </fieldset>
+    </form>
+    <section class="center" id="output">
+      <h2>Submit to Start</h2>
+    </section>
+    </main>
+  </body>
+</html>
