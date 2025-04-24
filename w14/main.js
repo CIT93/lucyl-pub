@@ -1,7 +1,7 @@
 function renderPhotos(photos) {
   photos.forEach((img) => {
     const imgEL = document.createElement("img");
-    imgEL.setAttribute("src", img.thumbnailUrl);
+    imgEL.setAttribute("src", 'https://picsum.photos/200/300');
     document.getElementById("output").appendChild(imgEL);
   });
 }
