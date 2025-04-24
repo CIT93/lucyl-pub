@@ -8,7 +8,7 @@ function renderPhotos(photos) {
 
 async function getPhotos() {
   try {
-    const data = await fetch("https://jsonplaceholder.typicode.com/photos");
+    const data = await fetch("https://picsum.photos/v2/list?page=2&limit=100");
     const photos = await data.json();
     if (!photos.length) {
       console.log('error on return value');
