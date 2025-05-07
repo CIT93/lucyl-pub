@@ -58,7 +58,8 @@ FORM.addEventListener("submit", (e) => {
     //   parseInt(e.target.waterWash.value)
 
       e.target.waterDish.value,
-      e.target.waterWash.value
+      e.target.waterWash.value,
+      e.target.purchase.value
 
     );
 

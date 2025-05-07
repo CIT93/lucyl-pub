@@ -1,5 +1,5 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, waterDish, waterWash) {
+    constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, waterDish, waterWash, purchase) {
       this.first = first;
       this.last = last;
       this.houseMembers = houseMembers;
@@ -9,6 +9,7 @@ class FP {
     //   this.waterConsumPoints = waterConsum;
       this.waterDish = waterDish;
       this.waterWash = waterWash;
+      this.purchase = purchase;
       this.calhouseHoldPoints();
       this.calhouseSizePoints();
       this.calfoodChoicePoints();
@@ -16,6 +17,7 @@ class FP {
       // this.calWaterConsumPoints();
       this.calwaterDishPoints();
       this.calwaterWashPoints();
+      this.calpurchasePoints();
       this.caltotal();
     }
     calhouseHoldPoints() {
@@ -92,6 +94,18 @@ class FP {
         this.waterWashPoints = 0
     }
   
+    calpurchasePoints() {
+        if (this.purchase === "MoreThanSeven")
+            this.purchasePoints = 10
+        if (this.purchase === "fiveToSeven")
+            this.purchasePoints = 8
+        if (this.purchase === "threeToFive")
+            this.purchasePoints = 6
+        if (this.purchase === "lessThanThree")
+            this.purchasePoints = 4
+        if (this.purchase === "nothing")
+            this.purchasePoints = 2
+    }
       
     
     
@@ -104,7 +118,8 @@ class FP {
         this.foodSourcePoints +
         // this.waterConsumPoints
         this.waterDishPoints +
-        this.waterWashPoints
+        this.waterWashPoints +
+        this.purchasePoints
     }
   }
   
