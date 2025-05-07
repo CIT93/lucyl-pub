@@ -52,10 +52,13 @@ FORM.addEventListener("submit", (e) => {
       e.target.houses.value,
       e.target.foodChoice.value,
       e.target.foodSource.value,
-      parseInt(e.target.water.value)
+    //   parseInt(e.target.water.value)
       
-      // parseInt(e.target.waterDish.value),
-      // parseInt(e.target.waterWash.value)
+    //   parseInt(e.target.waterDish.value),
+    //   parseInt(e.target.waterWash.value)
+
+      e.target.waterDish.value,
+      e.target.waterWash.value
 
     );
 

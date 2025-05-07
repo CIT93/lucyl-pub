@@ -66,11 +66,11 @@ const renderTblBtn = (obj, index, data) => {
     FORM.lastName.value = obj.last;
     FORM.housem.value = obj.houseMembers;
     FORM.houses.value = obj.houseSize;
-    FORM.food.value = obj.foodChoice;
+    FORM.foodChoice.value = obj.foodChoice;
     FORM.foodSource.value = obj.foodSource;
-    FORM.water.value = obj.waterConsumPoints.toString();
-    // FORM.waterDish.value = obj.waterDish;
-    // FORM.waterWash.value = obj.wasterWash;
+    // FORM.water.value = obj.waterConsumPoints.toString();
+    FORM.waterDish.value = obj.waterDish;
+    FORM.waterWash.value = obj.waterWash;
     onUpdate(index, data);
 
   });

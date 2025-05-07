@@ -1,21 +1,21 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, waterConsum) {
+    constructor(first, last, houseMembers, houseSize, foodChoice, foodSource, waterDish, waterWash) {
       this.first = first;
       this.last = last;
       this.houseMembers = houseMembers;
       this.houseSize = houseSize;
       this.foodChoice = foodChoice;
       this.foodSource = foodSource;
-      this.waterConsumPoints = waterConsum;
-      // this.waterDish = waterDish;
-      // this.waterWash = waterWash;
+    //   this.waterConsumPoints = waterConsum;
+      this.waterDish = waterDish;
+      this.waterWash = waterWash;
       this.calhouseHoldPoints();
       this.calhouseSizePoints();
       this.calfoodChoicePoints();
       this.calfoodSourcePoints();
       // this.calWaterConsumPoints();
-      // this.calwaterDishPoints();
-      // this.calwaterWashPoints();
+      this.calwaterDishPoints();
+      this.calwaterWashPoints();
       this.caltotal();
     }
     calhouseHoldPoints() {
@@ -70,23 +70,27 @@ class FP {
       }
     }
   
-    // calwaterDishPoints() {
-    //   if (this.waterDish === "overNine")
-    //     this.waterDishPoints = 3
-    //   if (this.waterDish === "fourtoNine")
-    //     this.waterDishPoints = 2
-    //   if (this.waterDish === "oneToThree")
-    //     this.waterDishPoints = 1
-    // }
+    calwaterDishPoints() {
+      if (this.waterDish === "overNine")
+        this.waterDishPoints = 3
+      if (this.waterDish === "fourtoNine")
+        this.waterDishPoints = 2
+      if (this.waterDish === "oneToThree")
+        this.waterDishPoints = 1
+      if (this.waterDish === "none")
+        this.waterDishPoints = 0
+    }
   
-    // calwaterWashPoints() {
-    //   if (this.waterWash === "overNine")
-    //     this.waterWashPoints = 3
-    //   if (this.waterWash === "fourtoNine")
-    //     this.waterWashPoints = 2
-    //   if (this.waterWash === "oneToThree")
-    //     this.waterWashPoints = 1
-    // }
+    calwaterWashPoints() {
+      if (this.waterWash === "overNine")
+        this.waterWashPoints = 3
+      if (this.waterWash === "fourtoNine")
+        this.waterWashPoints = 2
+      if (this.waterWash === "oneToThree")
+        this.waterWashPoints = 1
+      if (this.waterDish === "none")
+        this.waterWashPoints = 0
+    }
   
       
     
@@ -98,7 +102,9 @@ class FP {
         this.houseSizePoints +
         this.foodChoicePoints +
         this.foodSourcePoints +
-        this.waterConsumPoints
+        // this.waterConsumPoints
+        this.waterDishPoints +
+        this.waterWashPoints
     }
   }
   
