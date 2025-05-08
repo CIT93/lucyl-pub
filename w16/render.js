@@ -71,6 +71,7 @@ const renderTblBtn = (obj, index, data) => {
     // FORM.water.value = obj.waterConsumPoints.toString();
     FORM.waterDish.value = obj.waterDish;
     FORM.waterWash.value = obj.waterWash;
+    FORM.purchase.value = obj.purchase;
     onUpdate(index, data);
 
   });
